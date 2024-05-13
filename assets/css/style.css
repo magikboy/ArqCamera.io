@@ -20,6 +20,32 @@ main h2 {
     margin-bottom: 20px;
 }
 
+/* Personaliza la barra de desplazamiento completa */
+::-webkit-scrollbar {
+    width: 12px;  /* Ancho de la barra de desplazamiento */
+    background-color: #f9f9f9;  /* Color de fondo */
+}
+
+/* Personaliza el manejador de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+    background-color: #000000;  /* Color del manejador */
+    border-radius: 6px;  /* Redondea las esquinas del manejador */
+    border: 3px solid #f9f9f9;  /* Borde del manejador */
+}
+
+/* Personaliza el rastro del manejador (parte por la que ya se deslizó) */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;  /* Sombra interna en la pista */
+    border-radius: 10px;  /* Redondea las esquinas de la pista */
+}
+
+/* Personaliza el botón de la barra de desplazamiento (arriba y abajo) */
+::-webkit-scrollbar-button {
+    display: block;
+    height: 2px;
+    background-color: #000000;
+}
+
 .scroll-to-top {
     position: fixed;
     bottom: 20px;
@@ -28,14 +54,14 @@ main h2 {
     height: 50px;
     z-index: 1000;
     cursor: pointer;
-    display: block; /* Cambiado de 'none' para siempre visible, ajustar según la lógica de JavaScript */
+    display: block;
     align-items: center;
     justify-content: center;
     background-color: #333;
     color: #fff;
     border-radius: 50%;
     opacity: 0.7;
-    transition: opacity 0.3s, display 0.3s ease-in-out; /* Agregado display transition */
+    transition: opacity 0.3s, display 0.3s ease-in-out;
 }
 
 .scroll-to-top:hover {
@@ -90,7 +116,7 @@ h2 {
     color: white;
     text-align: center;
     overflow: hidden;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
 }
 
 .carousel {
@@ -107,7 +133,6 @@ h2 {
     height: 100%;
     object-fit: cover;
     filter: brightness(40%);
-    /* Add this line to make the images darker */
 }
 
 .carousel-caption {
@@ -119,15 +144,10 @@ h2 {
 .carousel-fixed-text {
     position: absolute;
     top: 400px;
-    /* Centrar verticalmente */
     left: 250px;
-    /* Ajustar horizontalmente según prefieras */
     transform: translateY(-50%);
-    /* Alineación vertical precisa */
     text-align: left;
-    /* Alineación del texto */
     z-index: 1050;
-    /* Asegura que el texto se muestre sobre las imágenes */
 }
 
 .carousel-fixed-text h1,
@@ -205,7 +225,7 @@ h2 {
 .gallery {
     background-color: #333;
     color: #fff;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
 }
 
 .gallery .row {
@@ -232,7 +252,7 @@ h2 {
     font-weight: bold;
     text-align: center;
     color: #ffffff;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 10px;
 }
 
@@ -241,8 +261,23 @@ h2 {
     transition: filter 0.3s ease;
 }
 
-footer {
+.trabajos{
     background-color: #333;
+    color: #fff;
+    padding-bottom: 0px;
+}
+
+.trabajos .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.trabajos .col-md-12 {
+    padding: 30px;
+}
+
+footer {
+    background-color: #1b1b1b;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -392,8 +427,6 @@ footer p {
 }
 
 @media (max-width: 375px) {
-
-    /* Estilos para resoluciones de 375px o menos */
     body {
         font-size: 14px;
     }
@@ -459,8 +492,6 @@ footer p {
 }
 
 @media (min-width: 376px) {
-
-    /* Estilos para resoluciones entre 376px*/
     body {
         font-size: 16px;
     }
@@ -497,4 +528,34 @@ footer p {
     }
 }
 
+.cs_contact_form_wrap {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cs_form_field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.cs_btn {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.cs_btn :hover {
+    background-color: #333;
+}
 
