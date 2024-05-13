@@ -20,6 +20,29 @@ main h2 {
     margin-bottom: 20px;
 }
 
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    display: block; /* Cambiado de 'none' para siempre visible, ajustar según la lógica de JavaScript */
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: opacity 0.3s, display 0.3s ease-in-out; /* Agregado display transition */
+}
+
+.scroll-to-top:hover {
+    opacity: 1;
+}
+
+
 h2 {
     font-size: 32px;
     font-weight: bold;
@@ -29,8 +52,34 @@ h2 {
     margin-bottom: 20px;
 }
 
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #333;
+        color: #000000;
+        transition: top 0.3s;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: #000000;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link:focus {
+        color: #000000;
+    }
+
+    .navbar-light .navbar-nav .active > .nav-link,
+    .navbar-light .navbar-nav .nav-link.active,
+    .navbar-light .navbar-nav .nav-link.show,
+    .navbar-light .navbar-nav .show > .nav-link {
+        color: #ffffff;
+    }
+}
+
 .header {
-    background-image: url('../img/white-black-monochrome-cityscape-architecture-photography-560530-wallhere.com.jpg');
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -40,52 +89,70 @@ h2 {
     align-items: center;
     color: white;
     text-align: center;
+    overflow: hidden;
+    margin-bottom: 50px;
 }
 
-.header h1 {
-    color: #000000;
-    font-size: 48px;
-    font-weight: bold;
-    margin: 0;
-    margin-top: -300px;
-    margin-left: -1200px;
+.carousel {
+    width: 100%;
+    height: 100%;
 }
 
-.header p {
-    color: #413f3f;
-    font-size: 24px;
+.carousel-item {
+    height: 100vh;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(40%);
+    /* Add this line to make the images darker */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.carousel-fixed-text {
+    position: absolute;
+    top: 400px;
+    /* Centrar verticalmente */
+    left: 250px;
+    /* Ajustar horizontalmente según prefieras */
+    transform: translateY(-50%);
+    /* Alineación vertical precisa */
+    text-align: left;
+    /* Alineación del texto */
+    z-index: 1050;
+    /* Asegura que el texto se muestre sobre las imágenes */
+}
+
+.carousel-fixed-text h1,
+.carousel-fixed-text p {
     margin: 0;
-    margin-top: 10px;
-    margin-left: -1200px;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+}
+
+.carousel-fixed-text p {
+    color: rgb(172, 172, 172);
 }
 
 @media (max-width: 768px) {
-    .header h1 {
-        color: #000000;
-        margin-top: -500px;
-        margin-left: 0;
-        font-size: 36px;
+    .header {
+        height: 50vh;
     }
 
-    .header p {
-        color: #000000;
-        margin-top: 10px;
-        margin-left: 0;
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 576px) {
-    .header h1 {
-        margin-top: -100px;
-        margin-left: 0;
-        font-size: 36px;
+    .carousel-item {
+        height: 50vh;
     }
 
-    .header p {
-        margin-top: 10px;
-        margin-left: 0;
-        font-size: 18px;
+    .carousel-caption {
+        font-size: 12px;
     }
 }
 
@@ -323,3 +390,111 @@ footer p {
         max-width: 100%;
     }
 }
+
+@media (max-width: 375px) {
+
+    /* Estilos para resoluciones de 375px o menos */
+    body {
+        font-size: 14px;
+    }
+
+    main h2 {
+        font-size: 24px;
+    }
+
+    .header {
+        height: 40vh;
+    }
+
+    .carousel-item {
+        height: 40vh;
+    }
+
+    .carousel-fixed-text {
+        top: 300px;
+        left: 150px;
+    }
+
+    .carousel-fixed-text h1 {
+        font-size: 24px;
+    }
+
+    .carousel-fixed-text p {
+        font-size: 12px;
+    }
+
+    .intro img,
+    .featured img {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .caption {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .caption h3 {
+        font-size: 18px;
+    }
+
+    .gallery img {
+        height: 300px;
+    }
+
+    .gallery h2 {
+        font-size: 24px;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        padding: 8px;
+    }
+
+    .contact-form input[type="submit"] {
+        padding: 10px 0;
+    }
+}
+
+@media (min-width: 376px) {
+
+    /* Estilos para resoluciones entre 376px*/
+    body {
+        font-size: 16px;
+    }
+
+    main h2 {
+        font-size: 28px;
+    }
+
+    .caption {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .caption h3 {
+        font-size: 22px;
+    }
+
+    .gallery img {
+        height: 400px;
+    }
+
+    .gallery h2 {
+        font-size: 28px;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        padding: 12px;
+    }
+
+    .contact-form input[type="submit"] {
+        padding: 14px 0;
+    }
+}
+
+
